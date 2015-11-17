@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reference</title>
+    <meta charset = "utf-8" />
+    <link href = "https://fonts.googleapis.com/css?family=Roboto:300" rel = "stylesheet" type = "text/css">
+    <style>
+      html, body {
+        margin: 15px;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+        font-family: "Roboto", sans-serif;
+        color: #2c3e50;
+      }
+      a:link {
+        text-decoration: none;
+        color: #93a6c1 !important;
+      }
+      a:visited {
+        color: #5a5575;
+      }
+      .code {
+        margin-left: 5px;
+        font-family: monospace;
+        color: #bdc3c7;
+        font-size: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    This document was created hastily to be used at the meeting; it will be updated later for better usability and design.<br>This is an example of HTML, CSS, and JavaScript used together in a single file.
+    <xmp class = "code">
+<!DOCTYPE html>
+<html>
+    <!-- This is a comment in HTML. -->
+    <head>
+        <title>Your website title</title>
+        <meta charset = "utf-8" /> <!-- Tells the browser which text encoding to use. -->
+        <!-- The "style" tag can be placed anywhere, including a separate file (research stylesheets). -->
+        <style>
+            /* You are now writing in CSS, not HTML! This is a comment in CSS. */
+            html, body {
+                margin: 0;
+                padding: 0;
+            }
+            #yourDiv { /* References id "yourDiv" in HTML. */
+                color: #ff0000; /* Can be written in a variety of formats. Research "color" property. */
+            }
+            .bodyParagraph { /* References class "bodyParagraph" in HTML. */
+                font-family: "Segoe UI", sans-serif; /* Tells the browser which font to use. */
+                font-size: 25px;
+            }
+            #makeBlue {
+                color: blue; /* Another way to write (common) colors */
+            }
+            #yourTable, #yourTable * {
+                border: 1px solid black;
+            }
+        </style> <!-- You're now back in HTML, not CSS! -->
+    </head>
+    <body>
+        <div id = "yourDiv">
+            <p class = "bodyParagraph">This is text within the paragraph.</p>
+        </div>
+        
+        <!-- Whitespace (tabs, newlines) is unnecessary, but helps make code more readable. -->
+        
+        <p id = "makeBlue" class = "bodyParagraph">
+            This is another paragraph with the class "bodyParagraph."
+            <br> <!-- Different browsers treat the "linebreak" element differently.
+                    Generally, it doesn't need an ending tag (no </br> necessary). -->
+            Note the different id!
+        </p>
+        
+        <table id = "yourTable"> <!-- Missing information, such as thead and tbody, should be filled automatically. -->
+            <tr> <!-- Start the first row -->
+                <td>First cell</td><td>Second cell</td> <!-- "td" denotes an individual table cell -->
+            </tr>
+            <tr> <!-- Start the second row -->
+                <td>I'm in the second row!</td><td>Me too!</td>
+            </tr>
+        </table>
+        
+        <!-- This is JavaScript. We'll discuss this in-depth later. -->
+        <script type = "text/javascript">
+            // This is a comment in JavaScript.
+            /*
+                This is a multi-line comment in JavaScript.
+                It can be used to display longer text.
+            */
+            alert("Use the console to view program output (generally F12)!"); // Note the ; at the end of the statement.
+            console.log("This is text from the console."); // Use console.log() to display text. Note the quotation marks!
+            
+            var x = "Hello."; // Variables are not type-specific. This is a "string."
+            x = 1;
+            x = 34.5443;
+            console.log(x * 5); // Easily change variables, including types. You can do math on numbers, but not strings.
+        </script>
+    </body>
+    <!--
+    HTML TAGS TO RESEARCH & KNOW (COMMONLY USED)
+        table
+            thead, tbody, tr, td, th
+        div
+        p
+        img
+        input
+        link
+        script
+        ol, ul
+            li
+        br
+        button
+        h1, h2, h3, h4, h5, h6
+        a
+    -->
+</html>
+      </xmp>
+      The whitespace and comments are unimportant. The following is the same file with its extra formatting removed.
+      <xmp class = "code">
+<!DOCTYPE html>
+<html>
+<head>
+<title>Your website title</title>
+<meta charset=utf-8 />
+<style>html,body{margin:0;padding:0}#yourDiv{color:#f00}.bodyParagraph{font-family:"Segoe UI",sans-serif;font-size:25px}#makeBlue{color:blue}#yourTable,#yourTable *{border:1px solid black}</style>
+</head>
+<body>
+<div id=yourDiv>
+<p class=bodyParagraph>This is text within the paragraph.</p>
+</div>
+<p id=makeBlue class=bodyParagraph>
+This is another paragraph with the class "bodyParagraph."
+<br>
+Note the different id!
+</p>
+<table id=yourTable>
+<tr>
+<td>First cell</td><td>Second cell</td>
+</tr>
+<tr>
+<td>I'm in the second row!</td><td>Me too!</td>
+</tr>
+</table>
+<script type=text/javascript>alert("Use the console to view program output (generally F12)!");console.log("This is text from the console.");var x="Hello.";x=1;x=34.5443;console.log(x*5);</script>
+</body>
+</html>
+      </xmp>
+      It is much smaller, but sacrifices most of its readability.<br>Different languages have different syntax. The following is an example of the C language (written for the GCC compiler).
+      <xmp class = "code">
+#include <stdio.h>
+#include <string.h> // Required to use strcpy
+#define DEFINITION 42 // Creates a global variable
+int main() {
+        // This is a comment in C!
+        printf("Hello, world.\n");
+       
+        // Must define length of strings
+        char hello[32];
+        printf("What's up?\nResponse: ");
+        scanf(" %s", &hello);
+        printf("You just said \"%s.\"\n", hello);
+       
+        // Can't replace strings without strcpy
+        strcpy(hello, "changed");
+        printf("The value of \"hello\" has been %s.\n", hello);
+       
+        // Every string contains a "null 0"
+        char whoa[5] = "Hello";
+        printf("%s\n", whoa);
+        whoa[0] = 'G';
+        whoa[1] = 'r';
+        whoa[2] = 'e';
+        whoa[3] = 'a';
+        whoa[4] = 't';
+        whoa[5] = '\0'; // Must include null 0 now!
+        printf("%s\n", whoa);
+       
+        /* It is possible to insert a new file into
+        the middle of a C file using the following:
+        #include "myFile.txt" */
+       
+        printf("%d\n", DEFINITION); // Prints definition from start of program
+       
+        // If, else if, else
+        if (1 < 2) {
+                printf("1 is less than 2!\n");
+        } else if (1 > 2) {
+                printf("Something is wrong with the world!\n");
+        } else {
+                printf("You should report this!\n");
+        }
+       
+        // Further operators
+        if ((1 < 2) && (4 >= 3)) {
+                printf("All is right in the universe.\n");
+                printf("And: &&     Or: ||     Not: !\n");
+        }
+       
+        // Not
+        if (!(2 < 1)) {
+                printf("Good.\n");
+        }
+       
+        // Conditional operator
+        (1 < 2) ? (printf("Returned true!\n")): (printf("Returned false!\n"));
+        // Follows syntax: condition ? true : false;
+       
+        int numPear = 2;
+        printf("I ate %d pear%s\n", numPear, (numPear > 1) ? ("s."): ("."));
+        // Practical application of conditional operator!
+       
+        // Calculates the size of objects, including strings
+        char length[4] = "ABCD";
+        printf("The size of \"length\" is %d.\n", sizeof(length));
+       
+        // While loop
+        int i = 0;
+        while (i < 5) {
+                printf("The counter is at %d.\n", i);
+                i++; // Be sure to increment!
+        }
+       
+        // Do ... while loop
+        int j = 0;
+        do {
+                printf("The second counter is at %d.\n", j);
+                j++; // Increment!
+        } while (j < 5);
+       
+        // For loop
+        int count; // Initialize variables first!
+        for (count = 0; count < 5; count++) {
+                printf("The third counter is at %d.\n", count);
+        }
+       
+        // Breaking a loop
+        int p;
+        for (p = 0; p < 10; p++) {
+                printf("The fourth counter is at %d.\n", p);
+                if (p == 4) {
+                        break; // Terminate early!
+                }
+        }
+       
+        int s = 3;
+        switch (s) {
+                case (1):
+                        printf("Case 1\n");
+                        break;
+                case (2):
+                        printf("Case 2\n");
+                        break;
+                case (3):
+                        printf("Case 3\n");
+                        break;
+                default:
+                        printf("Default\n");
+                        break;
+       
+        }
+       
+        // Use getchar or putchar to get/put a single character
+        putchar('\n');
+       
+        // End of program
+        return 0;
+}
+      </xmp>
+    It is possible to see a number of similarities between the languages, but most of the syntax is entirely different.<br>Programs can become immensely complex, but still follow the same principles. This is an example of a program written for Cottonwood's National Honor Society chapter. It analyzes user input and displays data based on its calculations (in HTML, CSS, and JavaScript again).
+      <xmp class = "code">
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- Copyright 2015 Robben Migacz -->
+	<title>Check Progress</title>
+	<meta charset="utf-8" />
+	<link href="https://fonts.googleapis.com/css?family=Roboto:400,400italic" rel="stylesheet" type="text/css">
+	<style>
+		html,
+		body {
+			padding: 0;
+			margin: 0;
+			font-family: "Roboto", sans-serif;
+			color: #2c3e50;
+		}
+		
+		.value {
+			background-color: #ecf0f1;
+			color: #2c3e50;
+			display: inline-block;
+			width: 200px;
+			margin: 5px;
+			text-align: center;
+			padding: 5px;
+		}
+		
+		.bar {
+			height: 5px;
+			background-color: #16a085;
+		}
+		
+		table {
+			vertical-align: middle;
+			text-align: center;
+			width: 100%;
+			height: 100%;
+		}
+		
+		.personal {
+			font-size: 50px;
+		}
+		
+		.percent {
+			font-style: italic;
+			margin-left: 15px;
+		}
+		
+		.house {
+			text-transform: uppercase;
+			font-size: 32px;
+			color: #ffffff;
+			margin: 25px 5px 5px 5px;
+			padding: 7px;
+			background-color: #2c3e50;
+		}
+		
+		button {
+			background-color: #2c3e50;
+			color: #ffffff;
+			border: none;
+			height: 25px;
+			margin: 5px;
+			border-radius: 1px;
+		}
+		
+		input {
+			height: 25px;
+			border: none;
+			width: 250px;
+			background-color: #ecf0f1;
+			color: #2c3e50 !important;
+			padding-left: 5px;
+		}
+		
+		.fillIn {
+			visibility: hidden;
+			height: 5px;
+		}
+		
+		#header {
+			text-align: center;
+			color: #2c3e50;
+			font-size: 20px;
+			padding: 5px 0 5px 0;
+			width: 1100px;
+			margin: auto;
+		}
+		
+		.bad {
+			background-color: #e74c3c;
+			color: #ffffff;
+		}
+		
+		.good {
+			background-color: #16a085;
+			color: #ffffff;
+		}
+		
+		.bad,
+		.good {
+			margin: 5px;
+			padding: 15px;
+		}
+		
+		#output {
+			width: 880px;
+			margin: auto;
+		}
+		
+		#notification {
+			margin: 0 5px 5px 5px;
+			padding: 0 15px 15px 15px;
+			text-align: justify;
+			background-color: #2c3e50;
+			color: #ffffff;
+		}
+        #quarter, #total {
+            text-align: left;
+            margin: 15px 0 15px 0;
+        }
+        .margin {
+            margin-left: 5px;
+        }
+	</style>
+</head>
+
+<body>
+	<div id="header">Check your progress toward graduating with NHS honors.</div>
+	<table>
+		<tr>
+			<td id="main">
+				<div id="output">JavaScript is required to access this page. Sorry!</div>
+			</td>
+		</tr>
+	</table>
+	<script type="text/javascript">
+        // You there. I like the way you think. Consider running for the communications office next year.
+		function doCheck() {
+			var text = document.getElementById("in").value,
+				d = 0,
+				r = "<br><div class='house'>",
+				fee = "?";
+			for (var j = 2; j < n.length; j++) {
+				var num = n[j][0],
+					grade = n[j][2],
+					encode = parseInt(num, 32).toString(10),
+					faction = n[j][1],
+					update = "Updated 11/07/15 at 4:10 p.m.",
+					probation = n[j][7];
+				if (n[j][2] == "12") {
+					grad = n[0];
+				} else {
+					grad = n[1];
+				}
+				if (text == encode) {
+					d = 1;
+					r += encode + ". House ";
+					switch (faction) {
+						case "1":
+							r += "Gryffindor.</div>";
+							break;
+						case "2":
+							r += "Ravenclaw.</div>";
+							break;
+						case "3":
+							r += "Slytherin.</div>";
+							break;
+						case "4":
+							r += "Hufflepuff.</div>";
+							break;
+						default:
+							r += "unknown.</div>";
+							break;
+					}
+					r += "<div id = 'quarter'><div class = 'margin'>This quarter</div>";
+					for (var k = 2; k < 13; k++) {
+						if (n[j][k] == "") {
+							n[j][k] = 0;
+						}
+					}
+					var names = ["grade", "individual hours", "activities", "tutoring hours", "fee paid", "probation", "individual hours", "activities", "meetings", "tutoring hours"];
+					for (var p = 3; p < 13; p++) {
+						if ((p != 7) && (p != 12)) {
+							r += "<div class = 'value'>";
+							if (p != 6) {
+								r += "<span class = 'personal'>" + n[j][p] + "</span><br>" + names[p - 2];
+                            } else {
+								switch (n[j][p]) {
+									case (0):
+									case (null):
+									case ("0"):
+										fee = "No";
+										break;
+									case ("1"):
+										fee = "Yes";
+										break;
+									default:
+										fee = "?";
+										break;
+								}
+								r += "<span class = 'personal'>" + fee + "</span><br>" + names[p - 2];
+							}
+							if (p > 2) {
+								r += " <span class = 'percent'>" + Math.round(n[j][p] / grad[p] * 100) + "%</span>";
+								if ((n[j][p] / grad[p] * 100 <= 100) && (n[j][p] / grad[p] * 100 > 0)) {
+									r += "<div class = 'bar' style = 'width: " + n[j][p] / grad[p] * 100 + "%;'></div>";
+								} else if (n[j][p] / grad[p] * 100 > 100) {
+									r += "<div class = 'bar' style= 'width: 100%;'></div>";
+								} else {
+									r += "<div class = 'fillIn' style = 'width: 100%;'></div>";
+								}
+							} else {
+								r += "<div class = 'fillIn' style = 'width: 100%'></div>";
+							}
+							r += "</div>";
+						}
+                        if (p == 6) {
+                            r += "</div><div id = 'total'><div class = 'margin'>Total</div>";
+                        }
+					}
+                    r += "</div>";
+					if ((probation == "1") || (probation == 1)) {
+						r += "<div class = 'bad'>You are on probation!</div>";
+					} else {
+						r += "<div class = 'good'>You are not on probation.</div>";
+					}
+				}
+			}
+			if (d == 0) {
+				main.innerHTML = replace + "<br>No results found.";
+			} else {
+				main.innerHTML = replace + r + update;
+			}
+		}
+		var main = document.getElementById("output"),
+			replace = "<input type='text' id='in' placeholder='Student number'><button id='doClick' onclick='doCheck();'>Check</button>",
+			fullData = "0`12`0`2`1`2`1`0`14`7`12`11 0`11`0`2`1`2`1`0`16`8`12`16",
+			s = fullData.split(" "),
+			n = [];
+		for (var i = 0; i < s.length; i++) {
+			n.push(s[i].split("`"));
+		}
+		main.innerHTML = replace;
+	</script>
+</body>
+
+</html>    
+      </xmp>
+  </body>
+</html>
